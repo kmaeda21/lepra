@@ -1,0 +1,87 @@
+<html>
+ 	<header>
+		<meta charset='UTF-8'>
+		<title>VD開発・検証環境 パラメーター送信テスト</title>
+		<script
+			src="https://code.jquery.com/jquery-2.2.4.js"
+			integrity="sha256-iT6Q9iMJYuQiMWNd9lDyBUStIq/8PuOW33aOqmvFpqI="
+			crossorigin="anonymous">
+		</script>
+	</header>
+	<body style="width:70%;margin:0 auto;font-family:monospace serif;">
+	<h1 style="line-height:2em">VD開発・検証環境 パラメーター送信テスト</h1>
+	<section style="background-color:#fff; padding-left:12%;">
+		<h2>Vantiv（いきなりステーキUS 専用）オンラインチャージサイト</h2>
+		<form action="http://192.168.33.145:81" method="post" name="testform">
+			<table border="1" width="80%" cellspacing="0" cellpadding="5" bordercolor="#333333" bgcolor="#eee">
+				<caption style="font-size:20px; font-weight:600; text-align:left">※ POST 形式：ローカル開発環境 : 192.168.33.145:81</caption>
+				<tr><th>項 目</th><th>パラメーター</th></tr>
+				<tr><td>cardno</td><td><input type="text" name="cardno" value="8511210000011058" style="width:300px"></td></tr>
+				<!-- <tr><td>resurl</td><td><input type="text" name="resurl" value="http://example.com" style="width:300px"></td></tr> -->
+				<tr><td>mail (メールアドレス)</td><td><input type="text" name="mail" value="example@email.com" style="width:300px"></td></tr>
+				<tr><td>PIN ※コピペしてLogin画面で入力</td><td>692378</td></tr>
+				<tr><td colspan="2"><input type="submit" value="送信"></td></tr>
+			</table>
+		</form>
+		<br>
+		<form action="http://192.168.33.145:81" method="get" name="testform">
+			<table border="1" width="80%" cellspacing="0" cellpadding="5" bordercolor="#333333" bgcolor="#eee">
+				<caption style="font-size:20px; font-weight:600; text-align:left">※ GET 形式：ローカル開発環境 : 192.168.33.145:81</caption>
+				<tr><th>項 目</th><th>パラメーター</th></tr>
+				<tr><td>cardno</td><td><input type="text" name="cardno" value="8511210000011058" style="width:300px"></td></tr>
+				<!-- <tr><td>resurl</td><td><input type="text" name="resurl" value="http://example.com" style="width:300px"></td></tr> -->
+				<tr><td>mail (メールアドレス)</td><td><input type="text" name="mail" value="example@email.com" style="width:300px"></td></tr>
+				<tr><td>PIN ※コピペしてLogin画面で入力</td><td>692378</td></tr>
+				<tr><td colspan="2"><input type="submit" value="送信"></td></tr>
+			</table>
+		</form>
+		<br>
+		<form action="https://ikinaristeak-us.charge.vdsystem.net" method="post" name="testform">
+			<table border="1" width="80%" cellspacing="0" cellpadding="5" bordercolor="#333333" bgcolor="#eee">
+				<caption style="font-size:20px; font-weight:600; text-align:left">※ POST 形式：AWS検証環境 : https://ikinaristeak-us.charge.vdsystem.net </caption>
+				<tr><th>項 目</th><th>パラメーター</th></tr>
+				<tr><td>cardno</td><td><input type="text" name="cardno" value="8511210000011058" style="width:300px"></td></tr>
+				<!-- <tr><td>resurl</td><td><input type="text" name="resurl" value="http://example.com" style="width:300px"></td></tr> -->
+				<tr><td>mail (メールアドレス)</td><td><input type="text" name="mail" value="example@email.com" style="width:300px"></td></tr>
+				<tr><td>PIN ※コピペしてLogin画面で入力</td><td>692378</td></tr>
+				<tr><td colspan="2"><input type="submit" value="送信"></td></tr>
+			</table>
+		</form>
+		<br>
+		<form action="https://ikinaristeak-us.charge.vdsystem.net" method="get" name="testform">
+			<table border="1" width="80%" cellspacing="0" cellpadding="5" bordercolor="#333333" bgcolor="#eee">
+				<caption style="font-size:20px; font-weight:600; text-align:left">※ GET 形式：AWS検証環境 : https://ikinaristeak-us.charge.vdsystem.net </caption>
+				<tr><th>項 目</th><th>パラメーター</th></tr>
+				<tr><td>cardno</td><td><input type="text" name="cardno" value="8511210000011058" style="width:300px"></td></tr>
+				<!-- <tr><td>resurl</td><td><input type="text" name="resurl" value="http://example.com" style="width:300px"></td></tr> -->
+				<tr><td>mail (メールアドレス)</td><td><input type="text" name="mail" value="example@email.com" style="width:300px"></td></tr>
+				<tr><td>PIN ※コピペしてLogin画面で入力</td><td>692378</td></tr>
+				<tr><td colspan="2"><input type="submit" value="送信"></td></tr>
+			</table>
+		</form>
+		<br>
+		<h3>テスト用クレジットカード情報</h3>
+		<ul>
+			<li>3Dセキュアなし<br />4980-NNN8-0000-0000(VISA)</li>
+			<li>3Dセキュアあり<br />4980-NNN7-0000-0000(VISA)</li>
+			<li>決済失敗を返す<br />4980-NNNN-9999-7001(VISA)</li>
+		</ul>
+		<p>※NNNN：任意の数字4桁</p>
+		<p>クレジットカードのセキュリティコード：任意の3桁数字</p>
+		<br>
+		<h2>Vantiv API test(作成中)</h2>
+		<form action="https://w1.mercurycert.net/PaymentsAPI/Credit/Sale" method="post" name="testform">
+			<table border="1" width="80%" cellspacing="0" cellpadding="5" bordercolor="#333333" bgcolor="#eee">
+				<caption style="font-size:20px; font-weight:600; text-align:left">Resource URL (POST) : https://w1.mercurycert.net/PaymentsAPI/Credit/Sale </caption>
+				<tr><th>項 目</th><th>パラメーター</th></tr>
+				<tr><td>InvoiceNo</td><td><input type="text" name="cardno" value="{'InvoiceNo':'1','RefNo':'1','Memo':'MPS Example JSON v1.0','Track2':'4003000123456781=17055025432198712345','Purchase':'1.00','Frequency':'OneTime','RecordNo':'RecordNumberRequested'}" style="width:300px"></td></tr>
+				<!-- <tr><td>resurl</td><td><input type="text" name="resurl" value="http://example.com" style="width:300px"></td></tr> -->
+				<tr><td>mail (メールアドレス)</td><td><input type="text" name="mail" value="example@email.com" style="width:300px"></td></tr>
+				<tr><td>PIN ※コピペしてLogin画面で入力</td><td>692378</td></tr>
+				<tr><td colspan="2"><input type="submit" value="送信"></td></tr>
+			</table>
+		</form>
+
+	</section>
+  </body>
+</html>
